@@ -53,6 +53,8 @@ a{color:var(--azul)}
 .portada h1{margin:0;font-size:clamp(28px,5vw,48px);line-height:1.15;color:var(--pizarra);font-weight:800}
 .portada h1 span{display:block;font-size:.55em;letter-spacing:.35em;font-weight:600;color:var(--azul-claro)}
 .portada .lugar{margin:12px 0 28px;color:var(--pizarra);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:14px}
+.portada.con-logo h1,.portada.con-logo .lugar{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.portada.con-logo .acciones{margin-top:24px}
 .portada .lugar::before,.portada .lugar::after{content:"";display:inline-block;width:40px;height:2px;background:var(--azul-claro);vertical-align:middle;margin:0 12px}
 .acciones{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s, box-shadow .15s}
@@ -201,7 +203,7 @@ footer .marca{color:#fff}
 
 <header class="portada" id="inicio">
   <div class="contenedor">
-    <img class="logo-grande" src="assets/logo.png" alt="Logo de la Iglesia Bíblica Viviendo por Fe" onerror="this.style.display='none'">
+    <img class="logo-grande" src="assets/logo.png" alt="Logo de la Iglesia Bíblica Viviendo por Fe" onload="this.closest('.portada').classList.add('con-logo')" onerror="this.style.display='none'">
     <h1><span>IGLESIA BÍBLICA</span>VIVIENDO POR FE</h1>
     <p class="lugar">El Viejo · Chinandega</p>
     <div class="acciones">
