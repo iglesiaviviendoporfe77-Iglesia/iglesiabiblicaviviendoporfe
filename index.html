@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iglesia Bíblica Viviendo por Fe | El Viejo, Chinandega</title>
+<meta name="description" content="Iglesia Bíblica Viviendo por Fe en El Viejo, Chinandega, Nicaragua. Culto de adoración los domingos 10:00 am. Te esperamos.">
+<meta property="og:title" content="Iglesia Bíblica Viviendo por Fe">
+<meta property="og:description" content="Una comunidad centrada en Cristo en El Viejo, Chinandega.">
+<meta property="og:image" content="assets/logo.png">
+<meta name="theme-color" content="#1b5fae">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#1b5fae;        /* azul principal (franja de títulos) */
+  --azul-claro:#5b93d3;  /* azul de las figuras del logo */
+  --azul-suave:#eaf2fb;
+  --pizarra:#5a6577;     /* gris azulado de "VIVIENDO POR FE" */
+  --tinta:#1f2937;
+  --rojo:#e4505b;        /* corazón del logo */
+  --blanco:#ffffff;
+  --fondo:#f7f9fc;
+  --radio:16px;
+  --sombra:0 10px 30px rgba(27,95,174,.12);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Raleway',system-ui,sans-serif;color:var(--tinta);background:var(--blanco);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--azul)}
+.contenedor{width:min(1120px,100% - 32px);margin-inline:auto}
+
+/* ---------- Navegación ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e6ecf4}
+.nav .contenedor{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--tinta);font-weight:800;letter-spacing:.5px}
+.marca img{width:40px;height:40px;object-fit:contain}
+.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.menu a{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--pizarra);font-weight:600;font-size:15px}
+.menu a:hover{background:var(--azul-suave);color:var(--azul)}
+.btn-menu{display:none;background:none;border:0;font-size:28px;color:var(--azul);cursor:pointer}
+
+/* ---------- Portada ---------- */
+.portada{position:relative;overflow:hidden;background:linear-gradient(160deg,#ffffff 0%,var(--azul-suave) 55%,#d6e6f8 100%);padding:72px 0 96px;text-align:center}
+.portada::before,.portada::after{content:"";position:absolute;left:-10%;right:-10%;height:220px;border-radius:50%;pointer-events:none}
+.portada::before{bottom:-150px;background:var(--azul-claro);opacity:.25}
+.portada::after{bottom:-175px;background:var(--azul);opacity:.9}
+.portada .logo-grande{width:min(320px,70%);margin:0 auto 8px;filter:drop-shadow(0 10px 20px rgba(27,95,174,.15))}
+.portada h1{margin:0;font-size:clamp(28px,5vw,48px);line-height:1.15;color:var(--pizarra);font-weight:800}
+.portada h1 span{display:block;font-size:.55em;letter-spacing:.35em;font-weight:600;color:var(--azul-claro)}
+.portada .lugar{margin:12px 0 28px;color:var(--pizarra);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:14px}
+.portada .lugar::before,.portada .lugar::after{content:"";display:inline-block;width:40px;height:2px;background:var(--azul-claro);vertical-align:middle;margin:0 12px}
+.acciones{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sombra)}
+.btn-primario{background:var(--azul);color:#fff}
+.btn-secundario{background:#fff;color:var(--azul);border:2px solid var(--azul)}
+.btn-whatsapp{background:#25d366;color:#fff}
+
+/* ---------- Secciones ---------- */
+section{padding:80px 0}
+.titulo{text-align:center;margin-bottom:40px}
+.titulo small{display:block;color:var(--rojo);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:13px}
+.titulo h2{margin:6px 0 0;font-size:clamp(26px,4vw,38px);color:var(--tinta)}
+.titulo p{max-width:640px;margin:12px auto 0;color:var(--pizarra)}
+.alterna{background:var(--fondo)}
+
+/* Servicios */
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.tarjeta{background:#fff;border-radius:var(--radio);padding:28px;box-shadow:var(--sombra);border-top:5px solid var(--azul-claro)}
+.tarjeta.destacada{border-top-color:var(--rojo)}
+.tarjeta .dia{font-size:14px;font-weight:700;color:var(--azul);text-transform:uppercase;letter-spacing:.15em}
+.tarjeta h3{margin:6px 0 4px;font-size:22px}
+.tarjeta .hora{font-size:30px;font-weight:800;color:var(--pizarra)}
+.tarjeta p{margin:8px 0 0;color:var(--pizarra)}
+
+/* Misión y visión */
+.mv{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.mv article{background:linear-gradient(150deg,var(--azul),#2f74c4);color:#fff;border-radius:var(--radio);padding:36px}
+.mv article:nth-child(2){background:linear-gradient(150deg,var(--pizarra),#6f7b8f)}
+.mv h3{margin:0 0 10px;font-size:24px}
+.mv p{margin:0;font-size:17px;opacity:.95}
+
+/* Creencias */
+.creencias{max-width:820px;margin:0 auto;display:grid;gap:12px}
+details{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.05);border-left:4px solid var(--azul-claro)}
+details[open]{border-left-color:var(--azul)}
+summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:700;font-size:18px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary .num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--azul-suave);color:var(--azul);font-size:14px;margin-right:10px;flex:none}
+summary::after{content:"+";font-size:24px;color:var(--azul);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0;padding:0 22px 20px 64px;color:var(--pizarra)}
+
+/* Ministerios */
+.ministerios{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.ministerio{background:#fff;border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra)}
+.ministerio .foto{aspect-ratio:4/3;background:linear-gradient(135deg,var(--azul-suave),#d6e6f8);display:grid;place-items:center;color:var(--azul-claro);font-weight:800;font-size:42px}
+.ministerio .foto img{width:100%;height:100%;object-fit:cover}
+.ministerio div.texto{padding:20px}
+.ministerio h3{margin:0 0 6px;color:var(--azul)}
+.ministerio p{margin:0;color:var(--pizarra)}
+
+/* Galería */
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.galeria figure{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:1;background:var(--azul-suave)}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.galeria figure:hover img{transform:scale(1.05)}
+
+/* Prédicas */
+.predicas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:start}
+.video{aspect-ratio:16/9;border-radius:var(--radio);overflow:hidden;background:#000;box-shadow:var(--sombra)}
+.predicas > div:empty{display:none}
+.predicas:has(> div:empty){grid-template-columns:1fr;max-width:560px;margin:0 auto}
+.ministerio .foto:empty::before{content:attr(data-letra);font-size:56px}
+.video iframe{width:100%;height:100%;border:0}
+.aviso{background:#fff;border:2px dashed #c9d8ec;border-radius:var(--radio);padding:28px;text-align:center;color:var(--pizarra)}
+
+/* Ubicación y contacto */
+.ubicacion{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:stretch}
+.info{background:#fff;border-radius:var(--radio);padding:32px;box-shadow:var(--sombra)}
+.info h3{margin:0 0 8px;color:var(--azul)}
+.info .dato{display:flex;gap:12px;margin:16px 0;align-items:flex-start}
+.info .dato b{display:block}
+.icono{flex:none;width:40px;height:40px;border-radius:12px;background:var(--azul-suave);display:grid;place-items:center;font-size:20px}
+.mapa{border-radius:var(--radio);overflow:hidden;min-height:360px;box-shadow:var(--sombra)}
+.mapa iframe{width:100%;height:100%;min-height:360px;border:0}
+
+/* Pie */
+footer{background:#13294b;color:#c9d6ea;padding:48px 0 24px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+footer h4{color:#fff;margin:0 0 12px}
+footer a{color:#c9d6ea;text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer .marca{color:#fff}
+.redes{display:flex;gap:10px;margin-top:14px}
+.redes a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.redes a:hover{background:var(--azul-claro)}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;padding-top:18px;text-align:center;font-size:14px}
+
+/* Botón flotante de WhatsApp */
+.flotante{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.flotante svg{width:30px;height:30px;fill:#fff}
+
+/* Animación al aparecer */
+.aparece{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease}
+.aparece.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.aparece{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ---------- Celular ---------- */
+@media (max-width:860px){
+  .btn-menu{display:block}
+  .menu{position:absolute;top:68px;left:0;right:0;flex-direction:column;background:#fff;padding:8px 16px 16px;border-bottom:1px solid #e6ecf4;display:none}
+  .menu.abierto{display:flex}
+  .ubicacion{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  section{padding:60px 0}
+  details p{padding-left:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ======================================================
+  CONFIGURACIÓN RÁPIDA (editar aquí)
+  - WhatsApp: número con código de país, sin + ni espacios (ej. 50588887777)
+  - Facebook / YouTube: enlaces completos. Si se dejan vacíos, se ocultan.
+  - Imágenes: poner los archivos en la carpeta assets/ (ver LEEME.txt)
+======================================================= -->
+<script>
+  window.IGLESIA = {
+    whatsapp: "",            // ej. "50588887777"
+    facebook: "",            // ej. "https://facebook.com/..."
+    youtube:  "",            // ej. "https://youtube.com/@..."
+    youtubeVideoId: ""       // ID de un video o prédica destacada, ej. "dQw4w9WgXcQ"
+  };
+</script>
+
+<nav class="nav">
+  <div class="contenedor">
+    <a class="marca" href="#inicio">
+      <img src="assets/logo.png" alt="" onerror="this.style.display='none'">
+      IBVPF
+    </a>
+    <button class="btn-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <ul class="menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#creemos">En qué creemos</a></li>
+      <li><a href="#ministerios">Ministerios</a></li>
+      <li><a href="#predicas">Prédicas</a></li>
+      <li><a href="#contacto">Contáctenos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="portada" id="inicio">
+  <div class="contenedor">
+    <img class="logo-grande" src="assets/logo.png" alt="Logo de la Iglesia Bíblica Viviendo por Fe" onerror="this.style.display='none'">
+    <h1><span>IGLESIA BÍBLICA</span>VIVIENDO POR FE</h1>
+    <p class="lugar">El Viejo · Chinandega</p>
+    <div class="acciones">
+      <a class="btn btn-primario" href="#servicios">Nuestros servicios</a>
+      <a class="btn btn-secundario" href="#contacto">¿Cómo llegar?</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="bienvenida">
+  <div class="contenedor titulo aparece">
+    <small>Bienvenidos</small>
+    <h2>Una familia que vive por fe</h2>
+    <p>Somos una comunidad de creyentes centrada en Cristo en El Viejo, Chinandega. Creemos que la Palabra de Dios transforma vidas, y queremos que nos acompañes a adorar, aprender y crecer juntos.</p>
+  </div>
+</section>
+
+<section id="servicios" class="alterna">
+  <div class="contenedor">
+    <div class="titulo aparece">
+      <small>Te esperamos</small>
+      <h2>Nuestros servicios</h2>
+    </div>
+    <div class="tarjetas">
+      <article class="tarjeta destacada aparece">
+        <div class="dia">Domingo</div>
+        <h3>Culto de adoración</h3>
+        <div class="hora">10:00 am</div>
+        <p>Alabanza, oración y predicación de la Palabra para toda la familia.</p>
+      </article>
+      <article class="tarjeta aparece">
+        <div class="dia">Lunes</div>
+        <h3>Reunión de hombres y mujeres</h3>
+        <div class="hora">6:00 pm</div>
+        <p>Reuniones separadas de hombres y de mujeres.</p>
+      </article>
+      <article class="tarjeta aparece">
+        <div class="dia">Miércoles</div>
+        <h3>Discipulado</h3>
+        <div class="hora">6:00 pm</div>
+        <p>Estudio bíblico para crecer como discípulos de Cristo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="mision">
+  <div class="contenedor">
+    <div class="titulo aparece">
+      <small>Quiénes somos</small>
+      <h2>Misión y visión</h2>
+    </div>
+    <div class="mv">
+      <article class="aparece">
+        <h3>Misión</h3>
+        <p>Predicar fielmente la Palabra de Dios, creyendo que ella es suficiente y poderosa para transformar vidas, edificar a la iglesia y conformar a cada creyente a la imagen de Jesucristo.</p>
+      </article>
+      <article class="aparece">
+        <h3>Visión</h3>
+        <p>Ser una comunidad de creyentes centrada en Cristo y comprometida con la Gran Comisión, donde cada miembro viva en todo tiempo por fe, dependa de Dios en todo momento y conozca su soberanía.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="creemos" class="alterna">
+  <div class="contenedor">
+    <div class="titulo aparece">
+      <small>Nuestra fe</small>
+      <h2>En qué creemos</h2>
+    </div>
+    <div class="creencias aparece">
+      <details open><summary><span><span class="num">1</span>La Biblia</span></summary><p>Creemos que la Biblia es la Palabra de Dios, inspirada, infalible y la máxima autoridad para juzgar las doctrinas y conductas de los seres humanos.</p></details>
+      <details><summary><span><span class="num">2</span>Dios</span></summary><p>Creemos en un solo Dios que existe eternamente en tres personas: el Padre, el Hijo y el Espíritu Santo.</p></details>
+      <details><summary><span><span class="num">3</span>Jesucristo</span></summary><p>Creemos que Jesucristo es el Hijo de Dios, plenamente Dios y plenamente hombre, quien nació de una virgen, vivió una vida sin pecado, murió, resucitó al tercer día y ascendió a los cielos.</p></details>
+      <details><summary><span><span class="num">4</span>El pecado</span></summary><p>Creemos que todos los seres humanos heredaron el pecado original.</p></details>
+      <details><summary><span><span class="num">5</span>La salvación</span></summary><p>Creemos que la salvación es por gracia solamente, mediante la fe en Cristo, y no por obras humanas.</p></details>
+      <details><summary><span><span class="num">6</span>La iglesia</span></summary><p>Creemos que la iglesia es el cuerpo de Cristo, y que tiene una misión: predicar el evangelio, hacer discípulos, y practicar fielmente las ordenanzas del bautismo y la cena del Señor.</p></details>
+      <details><summary><span><span class="num">7</span>El regreso de Cristo</span></summary><p>Creemos firmemente que Cristo volverá, creemos en la resurrección, que Dios levantará a sus hijos de la muerte para darles vida eterna.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="ministerios">
+  <div class="contenedor">
+    <div class="titulo aparece">
+      <small>Nuestros miembros</small>
+      <h2>Somos una familia</h2>
+      <p>Escuchamos juntos, estudiamos juntos y se predica la verdad.</p>
+    </div>
+    <div class="ministerios">
+      <article class="ministerio aparece">
+        <div class="foto" data-letra="⛪"><img src="assets/fotos/iglesia.jpg" alt="Templo de la iglesia" onerror="this.remove()"></div>
+        <div class="texto"><h3>La Iglesia</h3><p>Nuestro templo en El Viejo, abierto para todos.</p></div>
+      </article>
+      <article class="ministerio aparece">
+        <div class="foto" data-letra="H"><img src="assets/fotos/hombres.jpg" alt="Hombres de la iglesia" onerror="this.remove()"></div>
+        <div class="texto"><h3>Hombres IBVPF</h3><p>Hombres comprometidos con el crecimiento espiritual del cuerpo de Cristo.</p></div>
+      </article>
+      <article class="ministerio aparece">
+        <div class="foto" data-letra="M"><img src="assets/fotos/mujeres.jpg" alt="Mujeres de la iglesia" onerror="this.remove()"></div>
+        <div class="texto"><h3>Mujeres IBVPF</h3><p>Mujeres que se reúnen para orar y crecer en la Palabra.</p></div>
+      </article>
+      <article class="ministerio aparece">
+        <div class="foto" data-letra="N"><img src="assets/fotos/ninos.jpg" alt="Niños de la iglesia" onerror="this.remove()"></div>
+        <div class="texto"><h3>Los Niños</h3><p>Enseñamos a los más pequeños a conocer y amar a Jesús.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="alterna" hidden>
+  <div class="contenedor">
+    <div class="titulo aparece">
+      <small>Momentos</small>
+      <h2>Galería</h2>
+    </div>
+    <div class="galeria"></div>
+  </div>
+</section>
+
+<section id="predicas">
+  <div class="contenedor">
+    <div class="titulo aparece">
+      <small>Palabra de Dios</small>
+      <h2>Prédicas</h2>
+    </div>
+    <div class="predicas">
+      <div id="video-destacado" class="aparece"></div>
+      <div class="aviso aparece">
+        <h3 style="margin-top:0;color:var(--azul)">Filipenses 4:4-11</h3>
+        <p>Tema: <b>Regocijaos en el Señor.</b></p>
+        <p id="enlace-yt" hidden><a class="btn btn-primario" target="_blank" rel="noopener">Ver todas las prédicas</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="alterna">
+  <div class="contenedor">
+    <div class="titulo aparece">
+      <small>Visítanos</small>
+      <h2>¿Dónde estamos?</h2>
+    </div>
+    <div class="ubicacion">
+      <div class="info aparece">
+        <h3>Iglesia Bíblica Viviendo por Fe</h3>
+        <div class="dato"><span class="icono">📍</span><div><b>Dirección</b>De Enacal media cuadra al este, El Viejo, Chinandega, Nicaragua.</div></div>
+        <div class="dato"><span class="icono">🕙</span><div><b>Domingo</b>Culto de adoración, 10:00 am</div></div>
+        <div class="dato"><span class="icono">📖</span><div><b>Entre semana</b>Lunes y miércoles, 6:00 pm</div></div>
+        <div class="acciones" style="justify-content:flex-start;margin-top:20px">
+          <a class="btn btn-primario" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=12.660754,-87.165626">Abrir en Google Maps</a>
+          <a class="btn btn-whatsapp js-whatsapp" target="_blank" rel="noopener" hidden>WhatsApp</a>
+        </div>
+      </div>
+      <div class="mapa aparece">
+        <iframe title="Mapa de la iglesia" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=12.660754,-87.165626&z=17&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="contenedor">
+    <div class="cols">
+      <div>
+        <a class="marca" href="#inicio"><img src="assets/logo.png" alt="" onerror="this.style.display='none'">Iglesia Bíblica Viviendo por Fe</a>
+        <p>De Enacal media cuadra al este, El Viejo, Chinandega, Nicaragua.</p>
+        <div class="redes">
+          <a class="js-facebook" target="_blank" rel="noopener" aria-label="Facebook" hidden>f</a>
+          <a class="js-youtube" target="_blank" rel="noopener" aria-label="YouTube" hidden>▶</a>
+          <a class="js-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp" hidden>✆</a>
+        </div>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#mision">Misión y visión</a></li>
+          <li><a href="#creemos">En qué creemos</a></li>
+          <li><a href="#ministerios">Ministerios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horarios</h4>
+        <ul>
+          <li>Domingo · 10:00 am</li>
+          <li>Lunes · 6:00 pm</li>
+          <li>Miércoles · 6:00 pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="anio"></span> Iglesia Bíblica Viviendo por Fe</div>
+  </div>
+</footer>
+
+<a class="flotante js-whatsapp" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" hidden>
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.2c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1-1.6-1.5-3.5-1.5-5.4C5.4 9.9 10.2 5.2 16 5.2s10.6 4.7 10.6 10.5S21.8 26.2 16 26.2zm5.8-7.8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.6-1.8-1.7-2.1s0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.3 3.3 2.3 3.6 5.7 5c.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+(function(){
+  var C = window.IGLESIA || {};
+  // Año del pie
+  document.getElementById('anio').textContent = new Date().getFullYear();
+
+  // Menú en celular
+  var btn = document.querySelector('.btn-menu'), menu = document.querySelector('.menu');
+  btn.addEventListener('click', function(){
+    var abierto = menu.classList.toggle('abierto');
+    btn.setAttribute('aria-expanded', abierto);
+  });
+  menu.addEventListener('click', function(e){ if(e.target.tagName==='A'){ menu.classList.remove('abierto'); btn.setAttribute('aria-expanded', false); } });
+
+  // Enlaces opcionales: se muestran solo si están configurados
+  function activar(sel, url){ if(!url) return; document.querySelectorAll(sel).forEach(function(a){ a.href = url; a.hidden = false; }); }
+  if (C.whatsapp) activar('.js-whatsapp', 'https://wa.me/' + C.whatsapp.replace(/\D/g,'') + '?text=' + encodeURIComponent('Hola, quisiera información sobre la iglesia.'));
+  activar('.js-facebook', C.facebook);
+  activar('.js-youtube', C.youtube);
+  if (C.youtube){ var p = document.getElementById('enlace-yt'); p.hidden = false; p.querySelector('a').href = C.youtube; }
+  if (C.youtubeVideoId){
+    document.getElementById('video-destacado').innerHTML = '<div class="video"><iframe loading="lazy" allowfullscreen title="Prédica" src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(C.youtubeVideoId) + '"></iframe></div>';
+  }
+
+  // Galería: carga assets/galeria/1.jpg, 2.jpg ... hasta que no encuentre más (máx. 24)
+  var gal = document.querySelector('.galeria'), seccion = document.getElementById('galeria');
+  (function cargar(i){
+    if (i > 24) return;
+    var img = new Image();
+    img.onload = function(){
+      var f = document.createElement('figure');
+      img.alt = 'Foto de la iglesia ' + i; img.loading = 'lazy';
+      f.appendChild(img); gal.appendChild(f); seccion.hidden = false;
+      cargar(i + 1);
+    };
+    img.src = 'assets/galeria/' + i + '.jpg';
+  })(1);
+
+  // Animación suave al aparecer
+  var els = document.querySelectorAll('.aparece');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); } });
+    }, {threshold:.12});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('visible'); }); }
+})();
+</script>
+</body>
+</html>
