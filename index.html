@@ -48,8 +48,8 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:'Raleway',system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;font-family:'Raleway',system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.65;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
 body.cargando{overflow:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -461,6 +461,62 @@ footer .marca{color:#fff;margin-bottom:18px}
   .desliza{display:none}
   .wa .burb{display:none}
 }
+
+/* ===== Ajustes finos para celulares ===== */
+@media (max-width:860px){
+  .rv.izq,.rv.der{transform:translateY(32px)}
+}
+@media (max-width:640px){
+  section{padding:64px 0}
+  .hero{min-height:auto}
+  .hero .c{padding:108px 0 40px;gap:26px}
+  .hero h1{font-size:clamp(46px,14vw,64px)}
+  .hero .bajada{font-size:16.5px;margin-top:18px}
+  .hero .acciones{margin-top:24px;gap:10px}
+  .hero .acciones > *{flex:1 1 100%;justify-content:center}
+  .panel{max-width:none;padding:20px;border-radius:22px}
+  .panel h2{font-size:19px}
+  .cuenta{gap:6px;margin-top:14px}
+  .marca{gap:10px}
+  .marca small{font-size:9px;letter-spacing:.18em}
+  .hamb{width:44px;height:44px}
+  .hamb span{left:11px;right:11px}
+  .bien{gap:40px}
+  .collage{height:340px}
+  .cifras{margin:26px 0}
+  .cifras b{font-size:30px}
+  .cifras span{font-size:12px}
+  .horarios{margin-top:36px;gap:14px}
+  .hor{padding:28px 22px 22px}
+  .hor .num{font-size:64px;right:16px}
+  .hor h3{font-size:21px}
+  .hor .hora{font-size:44px}
+  .pasos{grid-template-columns:1fr 1fr;gap:30px 14px;margin-top:40px}
+  .paso{padding:0 4px}
+  .paso .bola{width:50px;height:50px;font-size:18px;margin-bottom:14px}
+  .paso h3{font-size:16.5px}
+  .paso p{font-size:14px;line-height:1.5}
+  /* 5 Solas y Ministerios: tarjetas que se deslizan con el dedo */
+  .solas,.mins{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:40px -16px 0;padding:4px 16px 18px;scroll-padding-inline:16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .solas::-webkit-scrollbar,.mins::-webkit-scrollbar{display:none}
+  .sola,.min{flex:0 0 80%;scroll-snap-align:start}
+  .sola:hover{transform:none}
+  .min{aspect-ratio:4/5}
+  .desliza-movil{display:flex}
+  .cr button{padding:17px 18px;font-size:16px}
+  .pred-dest{min-height:380px;padding:24px}
+  .pred-dest .play{top:34%;width:66px;height:66px;margin:-33px 0 0 -33px}
+  .pred-dest .nueva{top:20px;left:20px}
+  .tarjeta-info{padding:22px}
+  .mapa{min-height:280px}
+  .caja-final{padding:44px 22px}
+  footer .cols{grid-template-columns:1fr 1fr;gap:28px 18px}
+  footer .cols > :first-child{grid-column:1/-1}
+  .wa{right:14px;bottom:14px}
+  .wa .boton{width:54px;height:54px}
+  .wa svg{width:28px;height:28px}
+}
+.desliza-movil{display:none;align-items:center;gap:8px;margin:22px 0 -26px;font-size:13px;font-weight:700;letter-spacing:.06em;opacity:.7}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
@@ -611,6 +667,7 @@ footer .marca{color:#fff;margin-bottom:18px}
       <h2>Las cinco <em>Solas</em></h2>
       <p>La verdad del evangelio que permanece para siempre: una fe firme en la Palabra de Dios.</p>
     </div>
+    <p class="desliza-movil" aria-hidden="true">Desliza para ver más &rarr;</p>
     <div class="solas">
       <article class="sola rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"/></svg></div><h3>Sola Scriptura</h3><span class="es">Solo la Escritura</span><p>La Biblia es nuestra única autoridad infalible en fe y conducta.</p><span class="ref">2 Timoteo 3:16</span></article>
       <article class="sola rv" style="--d:.08s"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 8h14"/></svg></div><h3>Solus Christus</h3><span class="es">Solo Cristo</span><p>Jesucristo es el único mediador entre Dios y los hombres.</p><span class="ref">1 Timoteo 2:5</span></article>
@@ -700,6 +757,7 @@ footer .marca{color:#fff;margin-bottom:18px}
       <h2>Crecemos <em>juntos</em></h2>
       <p>Escuchamos juntos, estudiamos juntos y se predica la verdad.</p>
     </div>
+    <p class="desliza-movil" aria-hidden="true">Desliza para ver más &rarr;</p>
     <div class="mins">
       <article class="min rv esc" tabindex="0"><img src="assets/fotos/iglesia.jpg" alt="Templo de la iglesia" loading="lazy" onerror="this.remove()"><div class="t"><small>NUESTRA CASA</small><h3>La Iglesia</h3><p>Nuestro templo en El Viejo, con las puertas abiertas para ti.</p></div></article>
       <article class="min rv esc" style="--d:.08s" tabindex="0"><img src="assets/fotos/hombres.jpg" alt="Hombres de la iglesia" loading="lazy" onerror="this.remove()"><div class="t"><small>LUNES · 6 PM</small><h3>Hombres IBVPF</h3><p>Hombres comprometidos con el crecimiento espiritual del cuerpo de Cristo.</p></div></article>
@@ -860,7 +918,12 @@ footer .marca{color:#fff;margin-bottom:18px}
     ent.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); } });
   }, {threshold:.15, rootMargin:'0px 0px -60px 0px'}) : null;
   function ver(el){ if (io) io.observe(el); else el.classList.add('visible'); }
-  $$('.rv,.cortina').forEach(ver);
+  $$('.rv').forEach(ver);
+  /* Las cortinas están recortadas (clip-path) y el observador no las "ve"; se observa al contenedor */
+  var ioC = 'IntersectionObserver' in window ? new IntersectionObserver(function(ent){
+    ent.forEach(function(en){ if (en.isIntersecting){ $$('.cortina', en.target).forEach(function(c){ if (c.parentElement === en.target) c.classList.add('visible'); }); ioC.unobserve(en.target); } });
+  }, {threshold:0, rootMargin:'0px 0px -80px 0px'}) : null;
+  $$('.cortina').forEach(function(c){ if (ioC) ioC.observe(c.parentElement); else c.classList.add('visible'); });
 
   /* Contadores */
   var ioN = 'IntersectionObserver' in window && !reducir ? new IntersectionObserver(function(ent){
