@@ -414,6 +414,24 @@ footer .marca{color:#fff;margin-bottom:18px}
 .wa .boton::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:anillo 2.4s infinite}
 .wa svg{width:32px;height:32px;fill:#fff}
 
+.confesion{margin-top:8px;border-radius:20px;background:var(--noche);color:#fff;padding:30px 30px 28px;box-shadow:var(--sombra-s)}
+.confesion .eti{color:#ffb3b9}
+.confesion h3{margin:12px 0 10px;font-size:clamp(22px,2.4vw,28px);line-height:1.15;font-weight:900;letter-spacing:-.01em}
+.confesion p{color:#c9d6e8;margin:0;font-size:16px}
+.confesion details{margin-top:18px;border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+.confesion summary{cursor:pointer;font-weight:700;color:#cfe0f6;list-style:none;display:flex;align-items:center;gap:10px}
+.confesion summary::-webkit-details-marker{display:none}
+.confesion summary::after{content:"+";font-size:20px;font-weight:400;margin-left:auto;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.confesion details[open] summary::after{content:"−"}
+.confesion summary:focus-visible{outline:2px solid #fff;outline-offset:4px;border-radius:6px}
+.arts{list-style:none;margin:14px 0 0;padding:0;columns:2;column-gap:28px;font-size:14.5px;color:#dce6f3}
+.arts li{break-inside:avoid;display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.arts li span{flex:none;width:22px;font-weight:800;color:#7fb0e8;font-variant-numeric:tabular-nums}
+.btn-conf{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 20px;border-radius:999px;background:#fff;color:var(--noche);font-weight:700;font-size:15px;text-decoration:none;transition:transform .3s var(--ease)}
+.btn-conf:hover{transform:translateX(4px)}
+.btn-conf svg{width:18px;height:18px}
+@media (max-width:640px){.confesion{padding:24px 20px}.arts{columns:1}}
+
 /* Responsivo */
 @media (max-width:1080px){
   .solas{grid-template-columns:repeat(3,1fr)}
@@ -706,7 +724,7 @@ footer .marca{color:#fff;margin-bottom:18px}
       <div class="tit rv">
         <span class="eti">Nuestra fe</span>
         <h2>En qué <em>creemos</em></h2>
-        <p>Siete convicciones bíblicas que guían todo lo que somos y hacemos como iglesia.</p>
+        <p>Siete convicciones bíblicas que guían todo lo que somos y hacemos como iglesia, resumidas en la Confesión Bautista de Fe de Londres de 1689.</p>
       </div>
       <div class="cita-grande rv" style="--d:.15s">“Toda la Escritura es inspirada por Dios, y útil para enseñar, para redargüir, para corregir, para instruir en justicia.”<b>2 TIMOTEO 3:16</b></div>
     </div>
@@ -718,6 +736,16 @@ footer .marca{color:#fff;margin-bottom:18px}
       <div class="cr rv"><button aria-expanded="false"><span class="k">05</span>La salvación<span class="x"></span></button><div class="cuerpo"><div><p>Creemos que la salvación es por gracia solamente, mediante la fe en Cristo, y no por obras humanas.</p></div></div></div>
       <div class="cr rv"><button aria-expanded="false"><span class="k">06</span>La iglesia<span class="x"></span></button><div class="cuerpo"><div><p>Creemos que la iglesia es el cuerpo de Cristo, y que tiene una misión: predicar el evangelio, hacer discípulos, y practicar fielmente las ordenanzas del bautismo y la cena del Señor.</p></div></div></div>
       <div class="cr rv"><button aria-expanded="false"><span class="k">07</span>El regreso de Cristo<span class="x"></span></button><div class="cuerpo"><div><p>Creemos firmemente que Cristo volverá, creemos en la resurrección, que Dios levantará a sus hijos de la muerte para darles vida eterna.</p></div></div></div>
+      <div class="confesion rv">
+        <span class="eti">Nuestra confesión de fe</span>
+        <h3>Confesión Bautista de Fe de Londres de 1689</h3>
+        <p>Como iglesia nos adherimos a esta confesión histórica, que resume con fidelidad la enseñanza de las Escrituras. La Biblia sigue siendo nuestra única autoridad; la confesión expresa cómo la entendemos.</p>
+        <details>
+          <summary>Ver los 32 artículos</summary>
+          <ol class="arts"><li><span>01</span>De las Sagradas Escrituras</li><li><span>02</span>De Dios y de la Santísima Trinidad</li><li><span>03</span>Del decreto de Dios</li><li><span>04</span>De la creación</li><li><span>05</span>De la Divina Providencia</li><li><span>06</span>De la caída del hombre, del pecado y de su castigo</li><li><span>07</span>De la alianza de Dios</li><li><span>08</span>De Cristo Mediador</li><li><span>09</span>Del libre albedrío</li><li><span>10</span>Del llamamiento eficaz</li><li><span>11</span>De la justificación</li><li><span>12</span>De la adopción</li><li><span>13</span>De la santificación</li><li><span>14</span>De la fe salvadora</li><li><span>15</span>Del arrepentimiento para vida y salvación</li><li><span>16</span>De las buenas obras</li><li><span>17</span>De la perseverancia de los santos</li><li><span>18</span>De la seguridad de la gracia y de la salvación</li><li><span>19</span>De la ley de Dios</li><li><span>20</span>Del evangelio y de la extensión de su gracia</li><li><span>21</span>De la libertad cristiana y de la libertad de conciencia</li><li><span>22</span>Del culto religioso y del día de reposo</li><li><span>23</span>De los juramentos y votos legítimos</li><li><span>24</span>Del Magistrado Civil</li><li><span>25</span>Del matrimonio</li><li><span>26</span>De la iglesia</li><li><span>27</span>De la comunión de los santos</li><li><span>28</span>Del bautismo y de la Cena del Señor</li><li><span>29</span>Del bautismo</li><li><span>30</span>De la Cena del Señor</li><li><span>31</span>Del estado del hombre después de la muerte y de la resurrección</li><li><span>32</span>Del juicio final</li></ol>
+        </details>
+        <a class="btn-conf" href="https://www.iglesiaelcamino.org/nuestra-doctrina/la-confesi%C3%B3n-bautista-de-londres-de-1689" target="_blank" rel="noopener">Leer la confesión completa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
